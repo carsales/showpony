@@ -1,0 +1,25 @@
+﻿@using Showpony;
+
+@model dynamic
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div>
+        I am the index.
+        <br />
+        <br />
+        @{ Html.RenderExperiment("Upsell", new List<ActionVariant>()
+           {
+               new ActionVariant() {Name = "Animated", Action = "Animated", Controller = "Home"},
+               new ActionVariant() {Name = "Static", Action = "Static", Controller = "Home"},
+           });
+        }
+    </div>
+</body>
+</html>
