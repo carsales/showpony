@@ -73,4 +73,4 @@ When Showpony is asked to end an experiment it again looks at the cookies on the
 
 ## What does Showpony look like in action?
 
-!(showpony.png)
+![Showpony!!!](showpony.png)
