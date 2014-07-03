@@ -48,6 +48,7 @@ namespace Showpony
 
             var cookie = new HttpCookie(cookieName, variant)
             {
+
                 Expires = DateTime.Now.AddYears(1)
             };
             response.Cookies.Add(cookie);

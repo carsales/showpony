@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Showpony</id>
+        <version>1.0.1.0</version>
+        <title>Showpony</title>
+        <authors>Carsales.com Ltd</authors>
+        <owners>Carsales.com Ltd</owners>
+        <licenseUrl>https://github.com/carsales/showpony/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/carsales/showpony</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A lightweight variant testing library</description>
+        <copyright>Copyright © ∞</copyright>
+        <dependencies>
+            <dependency id="Microsoft.AspNet.Mvc" version="5.0.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\src\Showpony\bin\Release\Showpony.dll" target="lib\net451\Showpony.dll" />
+    </files>
+</package>
