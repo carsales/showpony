@@ -5,15 +5,14 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Showpony")]
-[assembly: AssemblyDescription("A lightweight variant testing library")]
+[assembly: AssemblyTitle("Showpony.Tests")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Carsales.com Ltd")]
-[assembly: AssemblyProduct("Showpony")]
-[assembly: AssemblyCopyright("Copyright © ∞")]
+[assembly: AssemblyCompany("Carsales.com ltd")]
+[assembly: AssemblyProduct("Showpony.Tests")]
+[assembly: AssemblyCopyright("Copyright © Carsales.com ltd 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: InternalsVisibleTo("Showpony.Tests")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -21,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("301b6bca-f567-4fdd-b3c4-656f86a651c7")]
+[assembly: Guid("21709953-1c65-425c-b1e6-04e3eb48afbd")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

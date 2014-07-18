@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Configuration;
 using Dapper;
+using System.Collections.Generic;
 
 namespace Showpony.Demo.Repositories
 {
@@ -21,6 +22,17 @@ namespace Showpony.Demo.Repositories
                 InsertShowponyStats(experiment, variant);
 
             IncrementShowponyEndedStats(experiment, variant);
+        }
+
+        public IEnumerable<ShowponyStats> SelectShowponyStats(string experiment)
+        {
+            var connectionString = WebConfigurationManager.ConnectionStrings["ShowponyStats"].ConnectionString;
+            using (var conn = new SqlConnection(connectionString))
+            {
+                const string sql = "SELECT * FROM Stats WHERE Experiment=@experiment";
+                var stats = conn.Query<ShowponyStats>(sql, new { experiment });
+                return stats;
+            }
         }
 
         private void InsertShowponyStats(string experiment, string variant)

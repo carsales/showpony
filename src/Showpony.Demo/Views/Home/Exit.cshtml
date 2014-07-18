@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model Showpony.Demo.Models.ExperimentResultsViewModel
 
 @{
     Layout = null;
@@ -7,15 +7,31 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>title</title>
-    </head>
-    <body>
-        <div>
-            I am the exit.
-            <br />
-            <br />
-            @Html.ActionLink("Start again", "Index")
-        </div>
-    </body>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div>
+
+        <h1>This experiment is OVER.</h1>
+
+        <p>
+            <strong>Here are the results:</strong>
+        </p>
+        
+
+        <ul>
+
+            @foreach (var variant in Model.VariantResults)
+            {
+                <li>
+                    @variant.Name | @variant.Started | @variant.Ended
+                    </li>
+            }
+        </ul>
+
+
+        @Html.ActionLink("Start again", "Index")
+    </div>
+</body>
 </html>

@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Linq;
 
 namespace Showpony
 {
@@ -23,7 +24,7 @@ namespace Showpony
             CookieEncryptionPassword = "Showpony";
         }
 
-        public static string RunExperiment(string experiment, IList<string> variants)
+        public static string RunExperiment(string experiment, IList<Variant> variants)
         {
             if (String.IsNullOrEmpty(experiment))
             {
@@ -33,6 +34,16 @@ namespace Showpony
             if (variants == null || variants.Count == 0)
             {
                 throw new ArgumentException("variants cannot be null or empty");
+            }
+
+            if(variants.Any(o => o.Weighting <= 0))
+            {
+                throw new ArgumentException("variant weighting cannot be zero or less");
+            }
+
+            if(variants.Any(o => String.IsNullOrWhiteSpace(o.Name)))
+            {
+                throw new ArgumentException("variant must have a name");
             }
 
             var variant =

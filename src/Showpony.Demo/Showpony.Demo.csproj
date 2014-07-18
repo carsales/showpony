@@ -142,6 +142,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\StatsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ShowponyStats.cs" />
     <Compile Include="Repositories\ShowponyRepository.cs" />
@@ -151,6 +152,7 @@
     <Content Include="App_Data\ShowponyStats_log.ldf">
       <DependentUpon>ShowponyStats.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\images\tjMpMuT.gif" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />

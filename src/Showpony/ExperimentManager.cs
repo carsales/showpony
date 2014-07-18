@@ -13,7 +13,7 @@ namespace Showpony
     {
         static readonly Random R = new Random();
 
-        internal static string GetSelectedVariant(HttpContextBase httpContext, string experiment, IEnumerable<string> variants)
+        internal static string GetSelectedVariant(HttpContextBase httpContext, string experiment, IEnumerable<Variant> variants)
         {
             var variant = Cookies.GetExperimentVariant(httpContext.Request, experiment);
             if (variant != null)
@@ -29,16 +29,37 @@ namespace Showpony
             Cookies.SetExperimentVariant(httpContext.Response, experiment, variant);
         }
 
-        internal static string GetRandomVariant(HttpContextBase httpContext, string experiment, IEnumerable<string> variants)
+        internal static string GetRandomVariant(HttpContextBase httpContext, string experiment, IEnumerable<Variant> variants)
         {
-            var variant = variants.OrderBy(x => R.Next()).First();
-            SetSelectedVariant(httpContext, experiment, variant);
+            var variant = GetRandomVariant(variants);
+            SetSelectedVariant(httpContext, experiment, variant.Name);
             ShowponyContext.OnExperimentStarted(new ExperimentStartedEventArgs()
             {
                 Experiment = experiment,
-                Variant = variant
+                Variant = variant.Name
             });
-            return variant;
+            return variant.Name;
+        }
+
+        internal static Variant GetRandomVariant(IEnumerable<Variant> variants)
+        {
+            int randomNumber = R.Next(0, variants.Sum(o => o.Weighting));
+            int lowerRange = 0;
+            int topRange = 0;
+
+            foreach (var variant in variants)
+            {
+                topRange += variant.Weighting;
+
+                if (randomNumber >= lowerRange && randomNumber < topRange)
+                {
+                    return variant;
+                }
+
+                lowerRange = topRange;
+            }
+
+            return null;
         }
     }
 }

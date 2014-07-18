@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showpony", "Showpony\Showpo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showpony.Demo", "Showpony.Demo\Showpony.Demo.csproj", "{79FCBE69-BBC4-48F8-A9A1-0D869FF12C6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showpony.Tests", "Showpony.Tests\Showpony.Tests.csproj", "{FE06955B-9CC5-499A-B652-DC6CAE74F2F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{79FCBE69-BBC4-48F8-A9A1-0D869FF12C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79FCBE69-BBC4-48F8-A9A1-0D869FF12C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79FCBE69-BBC4-48F8-A9A1-0D869FF12C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE06955B-9CC5-499A-B652-DC6CAE74F2F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE06955B-9CC5-499A-B652-DC6CAE74F2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE06955B-9CC5-499A-B652-DC6CAE74F2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE06955B-9CC5-499A-B652-DC6CAE74F2F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,15 +11,23 @@
 </head>
 <body>
     <div>
-        I am the index.
-        <br />
-        <br />
-        @{ Html.RenderExperiment("Upsell", new List<ActionVariant>()
+        <h1>Welcome to Showpony!</h1>
+
+        <p>
+            This is an experiment. You will either see a STATIC image or an ANIMATED image, depending on your luck.
+        </p>
+
+        @{ Html.RenderExperiment("Dharma Initiative", new List<ActionVariant>()
            {
-               new ActionVariant() {Name = "Animated", Action = "Animated", Controller = "Home"},
-               new ActionVariant() {Name = "Static", Action = "Static", Controller = "Home"},
+               new ActionVariant("Animated", 10, "Animated", "Home"),
+               new ActionVariant("Static", 5, "Static", "Home"),
            });
         }
+        
+        <p>
+            @Html.ActionLink("End the experiment.", "Exit")
+        </p>
+
     </div>
 </body>
 </html>

@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using Showpony.Demo.Models;
+using Showpony.Demo.Repositories;
+using System.Web.Mvc;
 
 namespace Showpony.Demo.Controllers
 {
@@ -19,10 +21,12 @@ namespace Showpony.Demo.Controllers
             return PartialView();
         }
 
-        [EndExperiment("Upsell")]
+        [EndExperiment("Dharma Initiative")]
         public ActionResult Exit()
         {
-            return View();
+            var stats = new ShowponyRepository().SelectShowponyStats("Dharma Initiative");
+
+            return View("Exit", new ExperimentResultsViewModel("Dharma Initiative", stats));
         }
     }
 }

@@ -13,21 +13,9 @@ namespace Showpony
 {
     public static class HtmlHelperExtensions
     {
-        public static void RenderExperiment(
-            this HtmlHelper htmlHelper, string experiment, IList<ActionVariant> variants)
+        public static void RenderExperiment(this HtmlHelper htmlHelper, string experiment, IList<ActionVariant> variants)
         {
-            if (String.IsNullOrEmpty(experiment))
-            {
-                throw new ArgumentNullException("experiment");
-            }
-
-            if (variants == null ||
-                variants.Count == 0)
-            {
-                throw new ArgumentException("variants cannot be null or empty");
-            }
-
-            var variantName = ShowponyContext.RunExperiment(experiment, variants.Select(x => x.Name).ToList());
+            var variantName = ShowponyContext.RunExperiment(experiment, variants.Select(x => new Variant(x.Name, x.Weighting)).ToList());
 
             var variant = variants.First(x => x.Name == variantName);
 
