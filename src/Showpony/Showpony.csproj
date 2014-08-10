@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cookies.cs" />
+    <Compile Include="SSTCryptographer.cs" />
     <Compile Include="Variant.cs" />
     <Compile Include="ExperimentEndedEventArgs.cs" />
     <Compile Include="ExperimentManager.cs" />

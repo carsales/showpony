@@ -8,7 +8,7 @@
         <owners>Carsales.com Ltd</owners>
         <licenseUrl>https://github.com/carsales/showpony/blob/master/LICENSE.md</licenseUrl>
         <projectUrl>https://github.com/carsales/showpony</projectUrl>
-        <iconUrl>https://github.com/carsales/showpony/blob/master/icon.png</iconUrl>
+        <iconUrl>https://raw.githubusercontent.com/carsales/showpony/master/icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A lightweight variant testing library</description>
         <copyright>Copyright © ∞</copyright>
