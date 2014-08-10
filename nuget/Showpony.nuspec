@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>Showpony</id>
-        <version>1.0.2.0</version>
+        <version>1.0.3.0</version>
         <title>Showpony</title>
         <authors>Carsales.com Ltd</authors>
         <owners>Carsales.com Ltd</owners>
-        <licenseUrl>https://github.com/carsales/showpony/blob/master/LICENSE.md</licenseUrl>
+        <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
         <projectUrl>https://github.com/carsales/showpony</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/carsales/showpony/master/icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
