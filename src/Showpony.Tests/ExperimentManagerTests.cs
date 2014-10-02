@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
@@ -76,6 +78,37 @@ namespace Showpony.Tests
 
                 Assert.AreEqual(variant.Name, "second");
             }
+        }
+
+        [TestMethod]
+        public void SetSelectedVariant()
+        {
+            HttpContext.Current = new HttpContext(
+                new HttpRequest("", "http://tempuri.org", ""),
+                new HttpResponse(new StringWriter())
+                );
+
+            ShowponyContext.SetExperimentVariant("Test1", "Variant1");
+        }
+
+        [TestMethod]
+        public void GetSelectedVariant()
+        {
+            ShowponyContext.EncryptCookie = false;
+
+            var req = new HttpRequest("", "http://tempuri.org", "");
+            req.Cookies.Add(new HttpCookie("ShowponyTest1")
+            {
+                Value = "Variant1",
+                Expires = DateTime.Now.AddYears(1)
+            });
+
+            HttpContext.Current = new HttpContext(
+                req,
+                new HttpResponse(new StringWriter())
+                );
+
+            Assert.AreEqual("Variant1", ShowponyContext.GetExperimentVariant("Test1"));
         }
     }
 }
