@@ -35,7 +35,9 @@ namespace Showpony
             return null;
         }
 
-        internal static void SetExperimentVariant(HttpResponseBase response, string experiment, string variant)
+        internal static void SetExperimentVariant(
+            HttpRequestBase request, HttpResponseBase response,
+            string experiment, string variant)
         {
             var cookieName = ShowponyContext.CookiePrefix + experiment;
             if (ShowponyContext.EncryptCookie)
@@ -48,9 +50,12 @@ namespace Showpony
 
             var cookie = new HttpCookie(cookieName, variant)
             {
-
                 Expires = DateTime.Now.AddYears(1)
             };
+
+            request.Cookies.Remove(cookieName);
+            request.Cookies.Add(cookie);
+            response.Cookies.Remove(cookieName);
             response.Cookies.Add(cookie);
         }
 

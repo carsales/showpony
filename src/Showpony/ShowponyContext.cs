@@ -74,7 +74,10 @@ namespace Showpony
 
         public static void SetExperimentVariant(string experiment, string variant)
         {
-            Cookies.SetExperimentVariant(new HttpResponseWrapper(HttpContext.Current.Response), experiment, variant);
+            Cookies.SetExperimentVariant(
+                new HttpRequestWrapper(HttpContext.Current.Request),
+                new HttpResponseWrapper(HttpContext.Current.Response),
+                experiment, variant);
         }
 
         internal static void OnExperimentStarted(ExperimentStartedEventArgs e)

@@ -26,7 +26,7 @@ namespace Showpony
 
         private static void SetSelectedVariant(HttpContextBase httpContext, string experiment, string variant)
         {
-            Cookies.SetExperimentVariant(httpContext.Response, experiment, variant);
+            Cookies.SetExperimentVariant(httpContext.Request, httpContext.Response, experiment, variant);
         }
 
         internal static string GetRandomVariant(HttpContextBase httpContext, string experiment, IEnumerable<Variant> variants)
