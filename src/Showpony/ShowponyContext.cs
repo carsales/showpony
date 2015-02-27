@@ -37,12 +37,12 @@ namespace Showpony
                 throw new ArgumentException("variants cannot be null or empty");
             }
 
-            if(variants.Any(o => o.Weighting <= 0))
+            if (variants.Any(o => o.Weighting <= 0))
             {
                 throw new ArgumentException("variant weighting cannot be zero or less");
             }
 
-            if(variants.Any(o => String.IsNullOrWhiteSpace(o.Name)))
+            if (variants.Any(o => String.IsNullOrWhiteSpace(o.Name)))
             {
                 throw new ArgumentException("variant must have a name");
             }
@@ -78,6 +78,19 @@ namespace Showpony
                 Experiment = experiment,
                 Variant = variant
             });
+        }
+
+        public static string GetExperimentVariant(string experiment)
+        {
+            return Cookies.GetExperimentVariant(new HttpRequestWrapper(HttpContext.Current.Request), experiment);
+        }
+
+        public static void SetExperimentVariant(string experiment, string variant)
+        {
+            Cookies.SetExperimentVariant(
+                new HttpRequestWrapper(HttpContext.Current.Request),
+                new HttpResponseWrapper(HttpContext.Current.Response),
+                experiment, variant);
         }
 
         internal static void OnExperimentStarted(ExperimentStartedEventArgs e)

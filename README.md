@@ -24,8 +24,8 @@ ASP.NET MVC 5+
 
 ```csharp
 @Html.RenderExperiment("TheMatrix", new List<ActionVariant> {
-	new ActionVariant {} {Name = "TheBluePill", Action = "Blue", Controller = "Pills"},
-	new ActionVariant {} {Name = "TheRedPill", Action = "Red", Controller = "Pills"}
+	new ActionVariant("TheBluePill", 50, "Blue", "Pills"),
+	new ActionVariant("TheRedPill", 50, "Red", "Pills")
 });
 ```
 
@@ -33,8 +33,10 @@ ASP.NET MVC 5+
 
 ```csharp
 var variant = ShowponyContext.RunExperiment(
-	"TheMatrix", 
-	new List<string>{ "TheBluePill", "TheRedPill" });
+	"TheMatrix", new List<Variant>{ 
+		new Variant("TheBluePill", 50),
+		new Variant("TheRedPill", 50)
+	});
 	
 switch (variant) {
 	case "TheBluePill":

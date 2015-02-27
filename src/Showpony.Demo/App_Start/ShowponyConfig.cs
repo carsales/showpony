@@ -7,6 +7,7 @@ namespace Showpony.Demo
     {
         public static void Register()
         {
+            ShowponyContext.EncryptCookie = true;
             ShowponyContext.ExperimentStarted += ShowponyContext_ExperimentStarted;
             ShowponyContext.ExperimentEnded += ShowponyContext_ExperimentEnded;
             ShowponyContext.ExperimentCheckpoint += ShowponyContext_ExperimentCheckpoint;
