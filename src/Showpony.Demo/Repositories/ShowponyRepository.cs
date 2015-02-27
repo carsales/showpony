@@ -16,6 +16,11 @@ namespace Showpony.Demo.Repositories
             IncrementShowponyStartedStats(experiment, variant);
         }
 
+        public void RecordShowponyCheckpoint(string experiment, string variant)
+        {
+            // record
+        }
+
         public void RecordShowponyEnded(string experiment, string variant)
         {
             if (SelectShowponyStats(experiment, variant) == null)

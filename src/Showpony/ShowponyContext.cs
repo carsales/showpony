@@ -16,6 +16,7 @@ namespace Showpony
         public static string CookieEncryptionPassword { get; set; }
         public static event EventHandler<ExperimentEndedEventArgs> ExperimentEnded;
         public static event EventHandler<ExperimentStartedEventArgs> ExperimentStarted;
+        public static event EventHandler<ExperimentCheckpointEventArg> ExperimentCheckpoint;
 
         static ShowponyContext()
         {
@@ -67,6 +68,18 @@ namespace Showpony
             });
         }
 
+        public static void ExperimentCheckpointRecord(string experiment)
+        {
+            var variant = Cookies.GetExperimentVariant(new HttpRequestWrapper(HttpContext.Current.Request), experiment);
+            if (variant == null) return;
+
+            OnExperimentCheckpoint(new ExperimentCheckpointEventArg()
+            {
+                Experiment = experiment,
+                Variant = variant
+            });
+        }
+
         internal static void OnExperimentStarted(ExperimentStartedEventArgs e)
         {
             var handler = ExperimentStarted;
@@ -79,6 +92,15 @@ namespace Showpony
         internal static void OnExperimentEnded(ExperimentEndedEventArgs e)
         {
             var handler = ExperimentEnded;
+            if (handler != null)
+            {
+                handler(null, e);
+            }
+        }
+
+        internal static void OnExperimentCheckpoint(ExperimentCheckpointEventArg e)
+        {
+            var handler = ExperimentCheckpoint;
             if (handler != null)
             {
                 handler(null, e);

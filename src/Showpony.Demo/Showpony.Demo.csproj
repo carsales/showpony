@@ -152,6 +152,8 @@
     <Content Include="App_Data\ShowponyStats_log.ldf">
       <DependentUpon>ShowponyStats.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\images\checkpoint.jpg" />
+    <Content Include="Content\images\static.jpg" />
     <Content Include="Content\images\tjMpMuT.gif" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -250,6 +252,7 @@
     <Content Include="Views\Home\Exit.cshtml" />
     <Content Include="Views\Showpony\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Views\Home\Checkpoint.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

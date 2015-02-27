@@ -21,6 +21,12 @@ namespace Showpony.Demo.Controllers
             return PartialView();
         }
 
+        [ExperimentCheckpoint("Dharma Initiative")]
+        public ActionResult Checkpoint()
+        {
+            return PartialView();
+        }
+
         [EndExperiment("Dharma Initiative")]
         public ActionResult Exit()
         {

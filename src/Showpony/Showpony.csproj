@@ -79,7 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cookies.cs" />
+    <Compile Include="ExperimentCheckpointAttribute.cs" />
     <Compile Include="Experiment.cs" />
+    <Compile Include="ExperimentCheckpointEventArg.cs" />
     <Compile Include="ExperimentEndedEventArgs.cs" />
     <Compile Include="ExperimentManager.cs" />
     <Compile Include="ExperimentStartedEventArgs.cs" />
