@@ -80,7 +80,6 @@
   <ItemGroup>
     <Compile Include="Cookies.cs" />
     <Compile Include="ExperimentCheckpointAttribute.cs" />
-    <Compile Include="Experiment.cs" />
     <Compile Include="SSTCryptographer.cs" />
     <Compile Include="Variant.cs" />
     <Compile Include="ExperimentCheckpointEventArg.cs" />
