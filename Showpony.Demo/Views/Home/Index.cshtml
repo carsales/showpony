@@ -1,0 +1,37 @@
+﻿@using Showpony;
+
+@model dynamic
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Showpony!</h1>
+
+        <p>
+            This is an experiment. You will either see a STATIC image or an ANIMATED image, depending on your luck.
+        </p>
+
+        @{ Html.RenderExperiment("Dharma Initiative", new List<ActionVariant>()
+           {
+               new ActionVariant("Animated", 10, "Animated", "Home"),
+               new ActionVariant("Static", 5, "Static", "Home"),
+           });
+        }
+
+        <p>
+            @Html.ActionLink("Pass test checkpoint", "Checkpoint")
+        </p>
+
+        <p>
+            @Html.ActionLink("End the experiment.", "Exit")
+        </p>
+
+    </div>
+</body>
+</html>
