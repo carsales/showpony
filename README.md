@@ -8,6 +8,10 @@
 
 [Apache License, Version 2.0](LICENSE.md)
 
+## Build Status (courtesy of AppVeyor)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/wvu96i5hg75shhgr?svg=true)](https://ci.appveyor.com/project/david-poirier-csn/showpony)
+
 ## Installation
 
 ```
